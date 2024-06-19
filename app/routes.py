@@ -1,11 +1,7 @@
 from app import app, db
 from app.Functions.register import register
 
-json = {
-    "email": "john@.com",
-    "password": "securepassword123"
-}
-app.add_url_rule("/register", "register", lambda: register(json))
+app.add_url_rule("/register", "register", lambda: register(), methods=["POST"])
 
 
 @app.route("/login")
