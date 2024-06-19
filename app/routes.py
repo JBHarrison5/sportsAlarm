@@ -1,14 +1,11 @@
 from app import app, db
-from app.UserModel import User
+from app.Functions.register import register
 
-
-@app.route("/register")
-def register():
-    user = User(email="john@john.com", password="1234")
-    db.session.add(user)
-    db.session.commit()
-    return "<h1>In register route</h1>"
-# Method for registering
+json = {
+    "email": "john@.com",
+    "password": "securepassword123"
+}
+app.add_url_rule("/register", "register", lambda: register(json))
 
 
 @app.route("/login")

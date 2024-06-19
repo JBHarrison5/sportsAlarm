@@ -1,4 +1,5 @@
 from app import db
+from flask import Response
 
 
 class User(db.Model):
