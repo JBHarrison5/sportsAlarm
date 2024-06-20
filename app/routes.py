@@ -1,13 +1,10 @@
 from app import app, db
 from app.Functions.register import register
+from app.Functions.login import login
 
 app.add_url_rule("/register", "register", lambda: register(), methods=["POST"])
 
-
-@app.route("/login")
-def login():
-    return "<h1>In login route</h1>"
-# Method for logging in
+app.add_url_rule("/login", "login", lambda: login(), methods=["POST"])
 
 
 @app.route("/addEvent")
