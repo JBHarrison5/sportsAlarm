@@ -1,5 +1,4 @@
 from app.Models.UserModel import Events
-from app.Functions.services import validate_date
 from app import db
 from flask import Response, request
 from datetime import datetime
