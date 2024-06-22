@@ -1,16 +1,14 @@
 from app import app, db
 from app.Functions.register import register
 from app.Functions.login import login
+from app.Functions.addEvent import add_event
 
 app.add_url_rule("/register", "register", lambda: register(), methods=["POST"])
 
 app.add_url_rule("/login", "login", lambda: login(), methods=["POST"])
 
+app.add_url_rule("/addEvent", "addEvent", lambda: add_event(), methods=["POST"])
 
-@app.route("/addEvent")
-def add_event():
-    return "<h1>In add Event route</h1>"
-# Method for add Event
 
 
 @app.route("/getAllEvents")
