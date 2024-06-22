@@ -2,7 +2,7 @@ from app import db
 from flask import Response
 
 
-class User(db.Model):
+class Users(db.Model):
     __tablename__ = 'Users'
     id = db.Column(db.Integer, primary_key = True)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -13,12 +13,12 @@ class User(db.Model):
         return f"User('{self.email}')"
 
 
-class Event(db.Model):
+class Events(db.Model):
     __tablename__ = 'Events'
     id = db.Column(db.Integer, primary_key=True)
     eventName = db.Column(db.String(60), unique=True, nullable=False)
-    eventDate = db.Column(db.DateTime, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
     wakeUp = db.Column(db.Boolean, nullable=False, default = False)
 
     def __repr__(self):
-        return f"Event('{self.eventName}', '{self.eventDate})"
+        return f"Events('{self.eventName}', '{self.date})"
