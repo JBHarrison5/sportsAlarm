@@ -1,5 +1,4 @@
 from app import db
-from flask import Response
 
 
 class Users(db.Model):
@@ -22,3 +21,11 @@ class Events(db.Model):
 
     def __repr__(self):
         return f"Events('{self.eventName}', '{self.date})"
+
+    def obj_to_dict(self):
+        return {
+            "id": self.id,
+            "eventName": self.eventName,
+            "date": self.date,
+            "wakeUp": self.wakeUp
+        }
