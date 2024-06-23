@@ -1,4 +1,6 @@
-from app.Models.UserModel import Events, db, Users
+from app.Models.UserModel import Users
+from app.Models.EventModel import Events
+from app import db
 from flask import jsonify, request, Response
 
 
