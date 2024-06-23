@@ -110,6 +110,68 @@ Do ```python3 -m pip install flask```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code: 500      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message: "Internal Server Error"  
 
+** Get Event**
+* **URL**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/getEvent
+
+* **Method:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GET
+
+* **URL Params**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Required:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are no required URL params
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Optional:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/getEvent?userID=x  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/getEvent?eventID=x
+
+* **Success Response:**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**For /getEvents and /getEvents?userId=x**    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code: 200  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Content:  
+```
+[
+    {
+        "date": "Tue, 25 Dec 2018 23:50:55 GMT",
+        "eventName": "test",
+        "id": 1,
+        "wakeUp": false
+    },
+    {
+        "date": "Thu, 25 Dec 2025 23:50:55 GMT",
+        "eventName": "test event",
+        "id": 2,
+        "wakeUp": false
+    },
+    {
+        "date": "Thu, 25 Dec 2025 12:00:00 GMT",
+        "eventName": "test event",
+        "id": 3,
+        "wakeUp": false
+    }
+]
+```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**For /getEvents and /getEvents?userId=x**    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code: 200  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Content:  
+```
+{
+    "date": "Tue, 25 Dec 2018 23:50:55 GMT",
+    "eventName": "test",
+    "id": 1,
+    "wakeUp": false
+}
+```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code: 422    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message: "Invalid Parameters"   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code: 500      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message: "Internal Server Error"  
+
 # Basic Tests Before Committing
 
 Make sure you can get all correct errors codes from each route  
