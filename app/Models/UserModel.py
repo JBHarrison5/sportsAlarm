@@ -1,4 +1,6 @@
-from app import db
+from app import db, bcrypt
+from flask import request, Response
+from sqlalchemy import update
 
 
 class Users(db.Model):
@@ -10,5 +12,3 @@ class Users(db.Model):
 
     def __repr__(self):
         return f"User('{self.email}')"
-
-
